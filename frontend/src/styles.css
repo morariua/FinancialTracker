@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root { height: 100%; }
+body {
+  background-color: #0b1120;
+  color: #e2e8f0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .card {
+    @apply bg-panel border border-border rounded-2xl shadow;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply btn bg-panelMuted text-slate-200 hover:bg-slate-700 border border-border;
+  }
+  .btn-danger {
+    @apply btn bg-bad/20 text-red-300 hover:bg-bad/30 border border-bad/40;
+  }
+  .input {
+    @apply w-full bg-panelMuted border border-border rounded-lg px-3 py-2 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+  .label {
+    @apply block text-xs uppercase tracking-wide text-slate-400 mb-1;
+  }
+  .pill {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+}
+table.data th, table.data td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #1e293b;
+  font-size: 0.875rem;
+}
+table.data th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #334155; border-radius: 8px; }
